@@ -29,6 +29,9 @@ class AmmeterEmulatorBase(ABC):
                         # Call the specific measure_current() method defined in subclasses
                         current = self.measure_current()
                         conn.sendall(str(current).encode('utf-8'))
+                    else:
+                        error_message = f"ERROR: Invalid command for {self.__class__.__name__}"
+                        conn.sendall(error_message.encode('utf-8'))
 
     @property
     @abstractmethod
