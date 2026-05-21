@@ -23,6 +23,7 @@ def main():
         key=lambda ammeter: results[ammeter]["statistics"]["standard_deviation"]
     )
 
+
     print(f"\nMost stable ammeter: {most_stable}")
     print(
         f"Lowest standard deviation: "
