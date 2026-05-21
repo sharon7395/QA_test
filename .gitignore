@@ -1,8 +1,8 @@
 .venv/
 venv/
 __pycache__/
-.idea/
 *.pyc
+.idea/
 .env
 pytest_cache/
 allure-results/
