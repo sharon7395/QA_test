@@ -19,6 +19,10 @@ def request_current_from_ammeter(port: int, command: bytes) -> float:
                 raise ValueError(f"No data received from ammeter on port {port}")
 
             response = data.decode('utf-8')
+
+            if response.startswith("ERROR"):
+                raise ValueError(response)
+
             current = float(response)
 
             print(f"Received current measurement from port {port}: {current} A")
