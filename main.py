@@ -24,7 +24,6 @@ if __name__ == "__main__":
     threading.Thread(target=run_entes_emulator, daemon=True).start()
     threading.Thread(target=run_circutor_emulator, daemon=True).start()
 
-
     # Wait for the servers to start, if you have problem restarting the servers between runs try increasing sleep time.
     time.sleep(5)
     request_current_from_ammeter(5001, b'MEASURE_GREENLEE -get_measurement') # Request from Greenlee Ammeter
