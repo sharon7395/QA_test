@@ -4,6 +4,7 @@ __pycache__/
 *.pyc
 .idea/
 .env
+results/
 pytest_cache/
 allure-results/
 allure-report/
