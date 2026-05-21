@@ -19,13 +19,11 @@ def run_circutor_emulator():
     circutor.start_server()
 
 if __name__ == "__main__":
-    # Start each ammeter in a separate thread
+    # Start each ammeter emulator in a separate daemon thread
     threading.Thread(target=run_greenlee_emulator, daemon=True).start()
     threading.Thread(target=run_entes_emulator, daemon=True).start()
     threading.Thread(target=run_circutor_emulator, daemon=True).start()
 
-    # This section is commented out because it shouldn't work.
-    # Read the README.md file as well as the source code if you need, and fix the problem.
 
     # Wait for the servers to start, if you have problem restarting the servers between runs try increasing sleep time.
     time.sleep(5)
@@ -35,6 +33,7 @@ if __name__ == "__main__":
 
     print("Ammeter emulators are running. Press Ctrl+C to stop.")
 
+    # Keep the main process alive so emulator threads continue running
     while True:
         time.sleep(1)
     pass
